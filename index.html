@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Te amo Ally ❤</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onclick="PlayAudio()">
+    <div class="texto">
+        <h3 class="texto">  
+            ❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤ Amor Feliz dia de San valentin. prepare este pagina en secreto
+            para sorprendete y bueno se que no querias que gastara dinero asi que solo gaste tiempo
+            aproveche los momentos libres para escribirte esto y hacerte una pagina para este dia de parejas 
+            quiero que disfrutes de la cancion y del corazon un corazon que latira siempre para ti de aqui hasta
+            el infinito te amo demasiado y eres la persona mas especial de mi vida es muy simple pero va con
+            mucho amor enserio te amo mucho ❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤
+        </h3>
+    </div>
+    <div class="heart">  
+    </div>
+    <audio id="Canciones" onended="nextSong()" >
+        <source src="musica/PRIMERA.mp3" type="audio/mpeg">
+        <source src="musica/SEGUNDA.mp3" type="audio/mpeg">
+        <source src="musica/TERCERA.mp3" type="audio/mpeg">
+        <source src="musica/CUARTA.mp3" type="audio/mpeg">
+        <source src="musica/QUINTA.mp3" type="audio/mpeg">
+        <source src="musica/SEXTA.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        var currentSongIndex = 0;
+        var audioElement = document.getElementById("Canciones");
+        
+        function PlayAudio() {
+            // Ajusta el volumen al 50% (0.5)
+            audioElement.volume = 0.4;
+
+            // Reproduce la música
+            audioElement.play();
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % 6; // Circular index for the 10 songs
+            audioElement.src = audioElement.getElementsByTagName('source')[currentSongIndex].src;
+            audioElement.play();
+        }
+    </script>
+</body>
+</html>
